@@ -1,0 +1,23 @@
+.form-group-grid {
+  display: grid;
+  grid-row-gap: 10px;
+  input {
+    max-width: 332px;
+  }
+}
+
+::ng-deep {
+  clr-stack-block.no-stack-block-label .stack-block-label {
+    display: none;
+  }
+  .stack-view .form-group label {
+    padding-left: .5rem;
+  }
+}
+
+form {
+  display: flex;
+  section:first-child {
+    margin-right: 2rem;
+  }
+}

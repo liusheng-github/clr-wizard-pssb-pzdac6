@@ -1,0 +1,102 @@
+::ng-deep {
+
+  // flexboxify vertically
+  // the section at the bottom 
+  // is scrollable
+  //
+  .scrollable-sections {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+
+    clr-checkbox:hover {
+      background: #fafafa;
+    }
+    clr-checkbox.checked {
+      background: #efefef;
+    }
+    dd clr-checkbox {
+      border: none !important;
+    }
+    .stack-children {
+      border-left: none !important;
+      border-right: none !important;
+    }
+    .checkbox-inline label, 
+    .checkbox label {
+      font-size: .54167rem;
+      line-height: 0.7rem !important;
+    }
+
+
+    section {
+      margin: 0 !important;
+
+      h5 {
+        display: flex;
+        justify-content: space-between;
+        .selected {
+          span {
+            font-weight: bold;
+          }
+        }
+      }
+
+      // the last row section is 
+      // usually the scrollable one
+      &:not(:first-child):last-child {
+        height: 0;
+        flex: 1 1 auto;
+        div {
+          min-height: 0;
+          overflow: auto;
+          &:not(.grid-3-cols) {
+            border: 1px solid #ddd;
+          }
+          clr-checkbox {
+            border: 1px solid #ddd;
+            // margin-top: -1px;
+            padding: .2rem .3rem;
+            border-left: none;
+            border-right: none;
+            border-top: none;
+            // font-size: .54167rem;
+            // line-height: 0.7rem !important;
+            // padding: .15rem 0;
+            // padding: .2rem .3rem .2rem .9rem;
+          }
+        }
+      }
+    }
+  }
+
+
+  // grid determines the columns
+  // horizontally
+  //
+  .grid-two-cols {
+    section {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-column-gap: 1rem;
+    }
+  }
+
+  .grid-3-plus-1-cols {
+    section {
+      display: grid;
+      grid-template-columns: 3fr 1fr;
+      justify-content: space-evenly;
+      grid-column-gap: 1rem;
+    }
+  }
+
+  .grid-3-cols {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-content: space-evenly;
+    grid-column-gap: .4rem;
+  }
+
+}

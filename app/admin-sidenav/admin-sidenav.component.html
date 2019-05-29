@@ -1,0 +1,345 @@
+<clr-vertical-nav 
+  [clrVerticalNavCollapsible]="true"
+  [clrVerticalNavCollapsed]="true">
+    
+    <a clrVerticalNavLink routerLinkActive="active" routerLink="/dashboard">
+        <clr-icon shape="dashboard" clrVerticalNavIcon></clr-icon>
+        Dashboard
+    </a>
+
+    <clr-vertical-nav-group
+            routerLinkActive="active">
+        <clr-icon shape="list" clrVerticalNavIcon></clr-icon>
+        Service Portfolio
+        <clr-vertical-nav-group-children>
+            <a clrVerticalNavLink
+               routerLink="./normal/pidgey"
+               routerLinkActive="active">
+                Create a new service
+            </a>
+            <a clrVerticalNavLink
+               routerLink="./normal/snorlax"
+               routerLinkActive="active">
+                Opened services
+            </a>
+            <a clrVerticalNavLink
+               routerLink="./normal/snorlax"
+               routerLinkActive="active">
+                Published services
+            </a>
+            <a clrVerticalNavLink
+               routerLink="./normal/snorlax"
+               routerLinkActive="active">
+                Retracted services
+            </a>
+        </clr-vertical-nav-group-children>
+    </clr-vertical-nav-group>
+    <clr-vertical-nav-group
+            routerLinkActive="active">
+        <clr-icon shape="administrator" clrVerticalNavIcon></clr-icon>
+        Administrator
+        <clr-vertical-nav-group-children>
+
+          <clr-vertical-nav-group
+                  routerLinkActive="active">
+              <clr-icon shape="flame" clrVerticalNavIcon></clr-icon>
+              Users
+              <clr-vertical-nav-group-children>
+                  <a clrVerticalNavLink
+                    routerLink="./fire/charmander"
+                    routerLinkActive="active">
+                      User Management
+                  </a>
+                  <a clrVerticalNavLink
+                    routerLink="./fire/charizard"
+                    routerLinkActive="active">
+                      Active Sessions
+                  </a>
+                  <a clrVerticalNavLink
+                    routerLink="./fire/charizard"
+                    routerLinkActive="active">
+                      Active History
+                  </a>
+                  <a clrVerticalNavLink
+                    routerLink="./fire/charizard"
+                    routerLinkActive="active">
+                      Feature Management
+                  </a>
+              </clr-vertical-nav-group-children>
+          </clr-vertical-nav-group>
+
+
+          <a clrVerticalNavLink
+              routerLink="./fire/charmander"
+              routerLinkActive="active">
+              Scheduled Notifications
+          </a>
+          <a clrVerticalNavLink
+              routerLink="./fire/charmander"
+              routerLinkActive="active">
+              Reports
+          </a>
+
+
+
+          <clr-vertical-nav-group
+                  routerLinkActive="active">
+              <clr-icon shape="flame" clrVerticalNavIcon></clr-icon>
+              Cross-service data elements
+              <clr-vertical-nav-group-children>
+                  <a clrVerticalNavLink
+                    routerLink="./fire/charmander"
+                    routerLinkActive="active">
+                      Content Maturity Model
+                  </a>
+
+                  <clr-vertical-nav-group routerLinkActive="active">
+                    <clr-icon shape="flame" clrVerticalNavIcon></clr-icon>
+                    Manage Roles
+                    <clr-vertical-nav-group-children>
+                      <a clrVerticalNavLink routerLink="./fire/charmander" routerLinkActive="active">
+                          Role types
+                      </a>
+                      <a clrVerticalNavLink routerLink="./fire/charizard" routerLinkActive="active">
+                          Roles
+                      </a>
+                    </clr-vertical-nav-group-children>
+                  </clr-vertical-nav-group>
+
+                  <a clrVerticalNavLink
+                    routerLink="./fire/charizard"
+                    routerLinkActive="active">
+                      Portfolios
+                  </a>
+                  <a clrVerticalNavLink
+                    routerLink="./fire/charizard"
+                    routerLinkActive="active">
+                      Technology Prerequisites
+                  </a>
+                  <a clrVerticalNavLink
+                    routerLink="./fire/charizard"
+                    routerLinkActive="active">
+                      Stakeholder Prerequisites
+                  </a>
+                  <a clrVerticalNavLink
+                    routerLink="./fire/charizard"
+                    routerLinkActive="active">
+                      Phases
+                  </a>
+
+                  <clr-vertical-nav-group routerLinkActive="active">
+                    <clr-icon shape="flame" clrVerticalNavIcon></clr-icon>
+                    Default Service Elements
+                    <clr-vertical-nav-group-children>
+                      <a clrVerticalNavLink routerLink="./fire/charmander" routerLinkActive="active">
+                          Default Modules
+                      </a>
+                    </clr-vertical-nav-group-children>
+                  </clr-vertical-nav-group>
+
+                  <a clrVerticalNavLink
+                    routerLink="./fire/charizard"
+                    routerLinkActive="active">
+                      Phases - Delivarable documents mapping
+                  </a>
+                  <a clrVerticalNavLink
+                    routerLink="./fire/charizard"
+                    routerLinkActive="active">
+                      Bill of Materials Configuration
+                  </a>
+                  <a clrVerticalNavLink
+                    routerLink="./fire/charizard"
+                    routerLinkActive="active">
+                      Bill of Materials Containers
+                  </a>
+
+              </clr-vertical-nav-group-children>
+          </clr-vertical-nav-group>
+
+          <clr-vertical-nav-group routerLinkActive="active">
+            <clr-icon shape="flame" clrVerticalNavIcon></clr-icon>
+            ITVM
+            <clr-vertical-nav-group-children>
+
+              <clr-vertical-nav-group routerLinkActive="active">
+                <clr-icon shape="flame" clrVerticalNavIcon></clr-icon>
+                Business Relationship Profiles
+                <clr-vertical-nav-group-children>
+                  <a clrVerticalNavLink routerLink="./fire/charmander" routerLinkActive="active">
+                      Infrastructure Provider
+                  </a>
+                  <a clrVerticalNavLink routerLink="./fire/charizard" routerLinkActive="active">
+                      Business Partner
+                  </a>
+                  <a clrVerticalNavLink routerLink="./fire/charizard" routerLinkActive="active">
+                      Digital Enterprise
+                  </a>
+                  <a clrVerticalNavLink routerLink="./fire/charizard" routerLinkActive="active">
+                      Consumer
+                  </a>
+                  <a clrVerticalNavLink routerLink="./fire/charizard" routerLinkActive="active">
+                      Cybersecurity
+                  </a>
+                  <a clrVerticalNavLink routerLink="./fire/charizard" routerLinkActive="active">
+                      Solution Set Contaner
+                  </a>
+                </clr-vertical-nav-group-children>
+              </clr-vertical-nav-group>
+
+              <clr-vertical-nav-group routerLinkActive="active">
+                <clr-icon shape="flame" clrVerticalNavIcon></clr-icon>
+                Manage Tags
+                <clr-vertical-nav-group-children>
+                  <a clrVerticalNavLink routerLink="./fire/charmander" routerLinkActive="active">
+                      Tag Groups
+                  </a>
+                  <a clrVerticalNavLink routerLink="./fire/charizard" routerLinkActive="active">
+                      Tags
+                  </a>
+                </clr-vertical-nav-group-children>
+              </clr-vertical-nav-group>
+
+              <a clrVerticalNavLink routerLink="./fire/charmander" routerLinkActive="active">
+                  Outcome
+              </a>
+              <a clrVerticalNavLink routerLink="./fire/charizard" routerLinkActive="active">
+                  Customer Problem
+              </a>
+              <a clrVerticalNavLink routerLink="./fire/charizard" routerLinkActive="active">
+                  Capability
+              </a>
+              <a clrVerticalNavLink routerLink="./fire/charizard" routerLinkActive="active">
+                  Solution Element
+              </a>
+              <a clrVerticalNavLink routerLink="./fire/charizard" routerLinkActive="active">
+                  Service Configuration
+              </a>
+            </clr-vertical-nav-group-children>
+          </clr-vertical-nav-group>
+
+          <clr-vertical-nav-group routerLinkActive="active">
+            <clr-icon shape="flame" clrVerticalNavIcon></clr-icon>
+            DWJM
+            <clr-vertical-nav-group-children>
+
+              <clr-vertical-nav-group routerLinkActive="active">
+                <clr-icon shape="flame" clrVerticalNavIcon></clr-icon>
+                Business Relationship Profiles
+                <clr-vertical-nav-group-children>
+                  <a clrVerticalNavLink routerLink="./fire/charmander" routerLinkActive="active">
+                      IT Defined
+                  </a>
+                  <a clrVerticalNavLink routerLink="./fire/charizard" routerLinkActive="active">
+                      User Centric
+                  </a>
+                  <a clrVerticalNavLink routerLink="./fire/charizard" routerLinkActive="active">
+                      Digital Enterprise
+                  </a>
+                  <a clrVerticalNavLink routerLink="./fire/charizard" routerLinkActive="active">
+                      Cybersecurity
+                  </a>
+                  <a clrVerticalNavLink routerLink="./fire/charizard" routerLinkActive="active">
+                      Cybersecurity
+                  </a>
+                  <a clrVerticalNavLink routerLink="./fire/charizard" routerLinkActive="active">
+                      Infrastructure
+                  </a>
+                  <a clrVerticalNavLink routerLink="./fire/charizard" routerLinkActive="active">
+                      Solution Set Container
+                  </a>
+                </clr-vertical-nav-group-children>
+              </clr-vertical-nav-group>
+
+              <clr-vertical-nav-group routerLinkActive="active">
+                <clr-icon shape="flame" clrVerticalNavIcon></clr-icon>
+                Manage Tags
+                <clr-vertical-nav-group-children>
+                  <a clrVerticalNavLink routerLink="./fire/charmander" routerLinkActive="active">
+                      Tag Groups
+                  </a>
+                  <a clrVerticalNavLink routerLink="./fire/charizard" routerLinkActive="active">
+                      Tags
+                  </a>
+                </clr-vertical-nav-group-children>
+              </clr-vertical-nav-group>
+
+              <a clrVerticalNavLink routerLink="./fire/charmander" routerLinkActive="active">
+                  Outcome
+              </a>
+              <a clrVerticalNavLink routerLink="./fire/charizard" routerLinkActive="active">
+                  Customer Problem
+              </a>
+              <a clrVerticalNavLink routerLink="./fire/charizard" routerLinkActive="active">
+                  Capability
+              </a>
+              <a clrVerticalNavLink routerLink="./fire/charizard" routerLinkActive="active">
+                  Solution Element
+              </a>
+              <a clrVerticalNavLink routerLink="./fire/charizard" routerLinkActive="active">
+                  Service Configuration
+              </a>
+            </clr-vertical-nav-group-children>
+          </clr-vertical-nav-group>
+
+          <a clrVerticalNavLink routerLink="./fire/charizard" routerLinkActive="active">
+           Manage OTS Process Type
+          </a>
+
+          <clr-vertical-nav-group routerLinkActive="active">
+            <clr-icon shape="flame" clrVerticalNavIcon></clr-icon>
+            Manage Products
+            <clr-vertical-nav-group-children>
+
+              <clr-vertical-nav-group routerLinkActive="active">
+                <clr-icon shape="flame" clrVerticalNavIcon></clr-icon>
+                Vmware Products
+                <clr-vertical-nav-group-children>
+                  <a clrVerticalNavLink routerLink="./fire/charmander" routerLinkActive="active">
+                      Products Mappings
+                  </a>
+                  <a clrVerticalNavLink routerLink="./fire/charizard" routerLinkActive="active">
+                      SB Products
+                  </a>
+                  <a clrVerticalNavLink routerLink="./fire/charizard" routerLinkActive="active">
+                      Custom Compatibility Products
+                  </a>
+                  <a clrVerticalNavLink routerLink="./fire/charizard" routerLinkActive="active">
+                      Version Mapping
+                  </a>
+                </clr-vertical-nav-group-children>
+              </clr-vertical-nav-group>
+
+              <clr-vertical-nav-group routerLinkActive="active">
+                <clr-icon shape="flame" clrVerticalNavIcon></clr-icon>
+                3rd Party Products
+                <clr-vertical-nav-group-children>
+                  <a clrVerticalNavLink routerLink="./fire/charmander" routerLinkActive="active">
+                      Vendors
+                  </a>
+                  <a clrVerticalNavLink routerLink="./fire/charizard" routerLinkActive="active">
+                      Vendor Products
+                  </a>
+                  <a clrVerticalNavLink routerLink="./fire/charizard" routerLinkActive="active">
+                      Vendor Product Versions
+                  </a>
+                  <a clrVerticalNavLink routerLink="./fire/charizard" routerLinkActive="active">
+                      Configuration
+                  </a>
+                </clr-vertical-nav-group-children>
+              </clr-vertical-nav-group>
+
+
+              <a clrVerticalNavLink routerLink="./fire/charizard" routerLinkActive="active">
+                  Tags
+              </a>
+            </clr-vertical-nav-group-children>
+          </clr-vertical-nav-group>
+
+          <a clrVerticalNavLink routerLink="./fire/charmander" routerLinkActive="active">
+            Import PCALC
+          </a>
+
+        </clr-vertical-nav-group-children>
+    </clr-vertical-nav-group>
+
+</clr-vertical-nav>

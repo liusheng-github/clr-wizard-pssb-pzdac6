@@ -1,0 +1,56 @@
+.grid-3-cols {
+    h5 {
+      display: flex;
+      justify-content: space-between;
+      font-size: .6rem;
+      
+      .selected {
+        span {
+          font-weight: bold;
+        }
+      }
+    }  
+}
+
+::ng-deep {
+
+  .se.selected .stack-view {
+    height: 100% !important;
+
+    .stack-view {
+      height: 100%;
+    }
+    clr-stack-block {
+      border-bottom: none;
+
+      clr-stack-block {
+        dt {
+          display: none;
+        }
+        dd {
+          padding: 0;
+          border: none;
+        }
+      }
+    }
+  }
+  .se.selected .stack-block-expandable > .stack-block-label {
+    flex: 1 1 auto;
+    max-width: unset;
+  }
+  .se.selected .stack-block-expandable > .stack-block-content {
+    width: auto;
+    flex-grow: 0;
+  }
+  .se.selected .stack-block-expandable clr-stack-block .stack-block-label {
+    display: none;
+  }
+  .se.selected .stack-block-expandable clr-stack-block .stack-block-content {
+    padding: 0;
+  }
+  .se.selected clr-checkbox label {
+    font-size: .54167rem;
+    line-height: 0.7rem !important;
+    padding: .2rem .3rem .2rem .9rem;
+  }
+}

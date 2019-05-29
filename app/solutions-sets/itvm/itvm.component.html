@@ -1,0 +1,30 @@
+<form #formItvm="ngForm">
+   
+  <div class="grid solution-set-btns column-delimiter itvm">
+    <div class="grid column-delimitted" *ngFor="let itvmCol of itvmColumns">
+
+      <h5>{{ itvmCol.value }}</h5>
+      <clr-checkbox 
+        *ngFor="let item of itvmCol.rows"
+        [(clrChecked)]="item.running"
+        [name]="item.name"
+        [ngClass]="{'checked': item.running}">
+        {{ item.value }}
+      </clr-checkbox>
+
+    </div>
+  </div>
+
+  <div class="grid solution-set-btns grid-cybersecurity">
+
+    <h5>Cybersecurity</h5>
+    <clr-checkbox 
+      *ngFor="let item of cybersecurity"
+      [(clrChecked)]="item.running"
+      [name]="item.name"
+      [ngClass]="{'checked': item.running}">
+      {{ item.value }}
+    </clr-checkbox>
+
+  </div>
+ </form>

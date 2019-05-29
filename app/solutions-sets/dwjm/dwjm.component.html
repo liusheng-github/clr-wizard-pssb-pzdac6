@@ -1,0 +1,83 @@
+<form #formDwjm="ngForm">
+  <div class="grid solution-set-btns column-delimiter dwjm">
+    
+    <div class="grid solution-set-btns column-delimitted">
+      <h5>IT Defined</h5>
+      <clr-checkbox 
+        *ngFor="let item of itDefined"
+        [(clrChecked)]="item.running"
+        [name]="item.name"
+        [ngClass]="{'checked': item.running}">
+        {{ item.value }}
+      </clr-checkbox>
+    </div>
+
+    <div class="grid solution-set-btns column-delimitted user-centric">
+      <h5>User Centric</h5>
+      <div class="user-centric-grid">
+        <clr-checkbox 
+          *ngFor="let item of userCentric"
+          [(clrChecked)]="item.running"
+          [name]="item.name"
+          [ngClass]="{'checked': item.running}">
+          {{ item.value }}
+        </clr-checkbox>
+      </div>
+      <div class="user-centric-grid">
+        <div class="app-catalog">
+          <clr-checkbox 
+            *ngFor="let item of appCatalog"
+            [(clrChecked)]="item.running"
+            [name]="item.name"
+            [ngClass]="{'checked': item.running}">
+            {{ item.value }}
+          </clr-checkbox>
+        </div>
+        <div class="unified-endpoint-mngmnt">
+          <clr-checkbox 
+            *ngFor="let item of unifiedEndpointManagement"
+            [(clrChecked)]="item.running"
+            [name]="item.name"
+            [ngClass]="{'checked': item.running}">
+            {{ item.value }}
+          </clr-checkbox>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid solution-set-btns digital-enterprise">
+      <h5>Digital Enterprise</h5>
+      <clr-checkbox 
+        *ngFor="let item of digitalEnterprise"
+        [(clrChecked)]="item.running"
+        [name]="item.name"
+        [ngClass]="{'checked': item.running}">
+        {{ item.value }}
+      </clr-checkbox>
+    </div>
+
+  </div>
+
+  <div class="grid solution-set-btns grid-cybersecurity">
+    <h5>Cybersecurity</h5>
+    <clr-checkbox 
+      *ngFor="let item of cybersecurity"
+      [(clrChecked)]="item.running"
+      [name]="item.name"
+      [ngClass]="{'checked': item.running}">
+      {{ item.value }}
+    </clr-checkbox>
+  </div>
+
+  <div class="grid solution-set-btns grid-cybersecurity">
+    <h5>Infrastructure Provider</h5>
+    <clr-checkbox 
+      *ngFor="let item of infraProvider"
+      [(clrChecked)]="item.running"
+      [name]="item.name"
+      [ngClass]="{'checked': item.running}">
+      {{ item.value }}
+    </clr-checkbox>
+  </div>
+
+ </form>

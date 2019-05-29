@@ -1,0 +1,36 @@
+<header class="header-2">
+  <div class="branding">
+      <a href="/dashboard" routerLinkActive="active" class="nav-link">
+        <clr-icon shape="pssb-logo"  size="36"></clr-icon>
+        <span class="title">PS Solution Builder</span>
+      </a>
+  </div>
+  <div class="header-nav">
+    <a href="/allopportunities" routerLinkActive="active" class="nav-link"><span class="nav-text">All Opportunities</span></a>
+    <!-- <a href="#" routerLinkActive="active" class="nav-link"><span class="nav-text">Customer Stories</span></a> -->
+  </div>
+  <div class="header-actions">
+
+    <div class="nav-text line-right">
+        Hi, Deyan!
+    </div>
+
+    <clr-dropdown>
+        <button class="nav-icon" clrDropdownTrigger>
+            <clr-icon shape="pssb-user" size="24" class="white-stroke"></clr-icon>
+            <clr-icon shape="caret down"></clr-icon>
+        </button>
+        <clr-dropdown-menu *clrIfOpen clrPosition="bottom-right">
+            <app-user-info></app-user-info>
+            <div class="dropdown-divider no-top-margin"></div>
+            <a href="..." clrDropdownItem>About</a>
+            <a href="..." clrDropdownItem>Support</a>
+            <a href="..." clrDropdownItem>View as</a>
+            <a href="..." clrDropdownItem>User Guide</a>
+            <div class="dropdown-divider"></div>
+            <a href="..." clrDropdownItem>Log out</a>
+        </clr-dropdown-menu>
+    </clr-dropdown>
+
+  </div>
+</header>

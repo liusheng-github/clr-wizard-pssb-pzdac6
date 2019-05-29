@@ -1,0 +1,307 @@
+<button class="btn btn-primary" (click)="wizard1.open()">
+  <clr-icon class="is-solid" shape="plus-circle"></clr-icon>
+  Create Opportunity (guided)
+</button>
+<button class="btn btn-primary" (click)="wizard.open()">
+  <clr-icon class="is-solid" shape="plus-circle"></clr-icon>
+  Create Opportunity (scoping)
+</button>
+
+
+
+
+
+
+
+
+
+
+<clr-wizard #wizard1 [(clrWizardOpen)]="_open1" [hidden]="!_open1">
+    <clr-wizard-title wizard-mode="guided mode">Create Opportunity</clr-wizard-title>
+
+
+
+
+
+
+
+    <clr-wizard-button [type]="'cancel'" class="second-row" data-secondline="and save">Exit</clr-wizard-button>
+    <clr-wizard-button [type]="'previous'">Back</clr-wizard-button>
+    <clr-wizard-button [type]="'next'">Next</clr-wizard-button>
+    <clr-wizard-button [type]="'finish'">Complete</clr-wizard-button>
+
+
+
+
+
+
+
+
+
+    <clr-wizard-page [clrWizardPageNextDisabled]=" customerName.pristine || !formPageOne.valid ">
+        <ng-template clrPageTitle>Let's get started</ng-template>
+        <ng-template clrPageNavTitle>Enter Basic Information</ng-template>
+        <form #formPageOne="ngForm">
+            <section class="form-block">
+                <div class="form-group">
+                    <label for="customerName">Customer name</label>
+                    <input type="text" placeholder="Enter Customer name" size="45"
+                       required [(ngModel)]="model.customerName" name="customerName" #customerName="ngModel">
+                </div>
+                <div class="form-group">
+                    <label>Opportunity name</label>
+                    <input type="text" placeholder="Enter Opportunity name" size="45"
+                      [(ngModel)]="model.oppotunityName" name="oppotunityName" #oppotunityName="ngModel">
+                </div>
+                <div class="form-group">
+                    <label> </label>
+                    <div class="checkbox">
+                        <input type="checkbox" id="checkrads_1">
+                        <label for="checkrads_1">Test Opportunity</label>
+                    </div>
+                </div>
+            </section>
+        </form>
+    </clr-wizard-page>
+
+
+
+
+
+
+
+
+    <clr-wizard-page 
+      #ssWizardPage
+      class="solution-sets" 
+      [ngClass]="tagsLeft ? 'tags-left' : 'tags-right'">
+      
+      <!-- 
+      formItvm
+      [clrWizardPageNextDisabled]=" !formItvm || !formItvm.valid "
+      [clrWizardPageNextDisabled]=" customerName.pristine || !formPage2.valid "
+      <form #formPage2="ngForm">
+      </form> -->
+
+        <ng-template clrPageTitle class="inline-flex">
+          Select how 
+          <span class="customer-name">{{ model.customerName }}</span>
+          wants to work with us
+          
+          <clr-dropdown>
+            <button type="button"
+              class="btn btn-link flat" 
+              clrDropdownTrigger>
+                {{solutionSet}}
+                <clr-icon shape="caret down"></clr-icon>
+            </button>
+            <clr-dropdown-menu *clrIfOpen>
+              <button 
+                type="button" 
+                clrDropdownItem 
+                (click)="solutionSet='IT Value Model';isItvm=true;">
+                IT Value Model
+              </button>
+              <button 
+                type="button" 
+                clrDropdownItem 
+                (click)="solutionSet='Digital Workspace Journey Model';isItvm=false;">
+                Digital Workspace Journey Model
+              </button>
+            </clr-dropdown-menu>
+          </clr-dropdown>
+
+          <!-- <clr-checkbox 
+            [clrInline]="true"
+            [(clrChecked)]="tagsLeft"
+            [name]="'TagsLeft'">
+            tags left
+          </clr-checkbox> -->
+
+        </ng-template>
+
+        <ng-template clrPageNavTitle>Select Solution Sets</ng-template>
+        
+        <div class="relative-parent">
+          <div class="scrollable-child">
+            <app-itvm #itvm [hidden]="!isItvm"></app-itvm>
+            <app-dwjm #dwjm [hidden]="isItvm"></app-dwjm>
+          </div>
+        </div>
+        <app-engineered-solutions [tagsLeft]="tagsLeft" 
+          [selected]="selectedSolutionSets"></app-engineered-solutions>
+        
+        <ng-template clrPageButtons>
+          <div class="leftRightBtns">
+            <div class="btns-left">
+              <clr-wizard-button 
+                class="select-all-btn"
+                (click)="selectAll( selectAllSolutionSets = !selectAllSolutionSets )">
+                <span [hidden]="!selectAllSolutionSets">Deselect All</span>
+                <span [hidden]="selectAllSolutionSets">Select All</span>
+              </clr-wizard-button>
+              <span class="selectedLabel">
+
+                <span>
+                  <span class="badge"
+                    [ngClass]="{'badge-3': (selectedSolutionSets > 0)}">
+                    {{ selectedSolutionSets }}
+                  </span>
+                  Solution sets selected.
+                </span>
+
+                <span class="required-message">
+                  <clr-alert 
+                    [clrAlertSizeSmall]="false"
+                    [clrAlertClosable]="false"
+                    [clrAlertType]="'danger'"
+                    [hidden]="selectedSolutionSets > 0">
+                    <div class="alert-item">
+                      <span class="alert-text">
+                        At least 1 is required. 
+                      </span>
+                    </div>
+                  </clr-alert>
+                </span>
+
+
+              </span>
+            </div>
+            <div class="btns-right">
+              <clr-wizard-button [type]="'cancel'" class="second-row" data-secondline="and save">Exit</clr-wizard-button>
+              <clr-wizard-button [type]="'previous'">Back</clr-wizard-button>
+              <clr-wizard-button [type]="'next'">Next</clr-wizard-button>
+              <clr-wizard-button [type]="'finish'">Finish</clr-wizard-button>
+            </div>
+          </div>
+        </ng-template>
+    </clr-wizard-page>
+
+    <clr-wizard-page class="se-page">
+      <ng-template clrPageTitle>Select what ACME Inc. is trying to accomplish with VMware</ng-template>
+      <ng-template clrPageNavTitle>Select Solution Elements</ng-template>
+      <app-solution-elements></app-solution-elements>
+      <ng-template clrPageButtons>
+        <div class="leftRightBtns">
+          <div class="btns-left">
+            <clr-wizard-button>Reset</clr-wizard-button>
+            <clr-wizard-button class="select-all-btn">Select All</clr-wizard-button>
+            <span class="selectedLabel">
+              <span class="badge badge-success">15</span>
+              Solution sets selected
+            </span>
+          </div>
+          <div class="btns-right">
+            <clr-wizard-button [type]="'cancel'" class="second-row" data-secondline="and save">Exit</clr-wizard-button>
+            <clr-wizard-button [type]="'previous'">Back</clr-wizard-button>
+            <clr-wizard-button [type]="'next'">Next</clr-wizard-button>
+            <clr-wizard-button [type]="'finish'">Finish</clr-wizard-button>
+          </div>
+        </div>
+      </ng-template>
+    </clr-wizard-page>
+
+    <clr-wizard-page class="scrollable-wizard-page">
+        <ng-template clrPageTitle>Select a set of compatible products for ACME Inc</ng-template>
+        <ng-template clrPageNavTitle>Select Products</ng-template>
+        <app-products></app-products>
+    </clr-wizard-page>
+
+    <clr-wizard-page>
+        <ng-template clrPageTitle>Review and complete this opportunity</ng-template>
+        <ng-template clrPageNavTitle>Complete</ng-template>
+    </clr-wizard-page>
+
+</clr-wizard>
+
+<clr-wizard #wizard [(clrWizardOpen)]="_open" [hidden]="!_open">
+    <clr-wizard-title wizard-mode="scoping mode">Create Opportunity</clr-wizard-title>
+
+    <clr-wizard-button [type]="'cancel'" class="second-row" data-secondline="and save">Exit</clr-wizard-button>
+    <clr-wizard-button [type]="'previous'">Back</clr-wizard-button>
+    <clr-wizard-button [type]="'next'">Next</clr-wizard-button>
+    <clr-wizard-button [type]="'finish'">Finish</clr-wizard-button>
+
+    <clr-wizard-page>
+        <ng-template clrPageTitle>Opportunity Details</ng-template>
+        <ng-template clrPageNavTitle>Opportunity Details</ng-template>
+        <app-opportunity-details-3></app-opportunity-details-3>
+
+        <ng-template clrPageButtons>
+          <div class="leftRightBtns">
+            <!-- <div class="btns-left">
+              <clr-dropdown>
+                  <button type="button" class="btn btn-outline-primary" clrDropdownTrigger>
+                      Donload BOM
+                      <clr-icon shape="caret up"></clr-icon>
+                  </button>
+                  <clr-dropdown-menu clrPosition="top-left" *clrIfOpen>
+                      <button type="button" clrDropdownItem>Download Proposal (.PPTX)</button>
+                      <button type="button" clrDropdownItem>Download SSaD (.DOCX)</button>
+                      <button type="button" clrDropdownItem>Download BOM (.ZIP)</button>
+                  </clr-dropdown-menu>
+              </clr-dropdown>
+            </div> -->
+            <div class="btns-right">
+              <clr-wizard-button [type]="'cancel'" class="second-row" data-secondline="and save">Exit</clr-wizard-button>
+              <clr-wizard-button [type]="'previous'">Back</clr-wizard-button>
+              <clr-wizard-button [type]="'next'">Next</clr-wizard-button>
+              <clr-wizard-button [type]="'finish'">Finish</clr-wizard-button>
+            </div>
+          </div>
+        </ng-template>
+    </clr-wizard-page>
+
+    <!-- <clr-wizard-page>
+        <ng-template clrPageTitle>Opportunity Details</ng-template>
+        <ng-template clrPageNavTitle>Opportunity Details</ng-template>
+        <app-opportunity-details-2></app-opportunity-details-2>
+    </clr-wizard-page>
+
+    <clr-wizard-page>
+        <ng-template clrPageTitle>Opportunity Details</ng-template>
+        <ng-template clrPageNavTitle>Opportunity Details</ng-template>
+        <app-opportunity-details></app-opportunity-details>
+    </clr-wizard-page>
+
+    <clr-wizard-page>
+        <ng-template clrPageTitle>Delivery Region</ng-template>
+        <ng-template clrPageNavTitle>Delivery Region</ng-template>
+        <app-delivery-region></app-delivery-region>
+    </clr-wizard-page> -->
+
+    <clr-wizard-page>
+        <ng-template clrPageTitle>Selected Solution Elements</ng-template>
+        <ng-template clrPageNavTitle>Selected Solution Elements</ng-template>
+    </clr-wizard-page>
+
+    <clr-wizard-page>
+        <ng-template clrPageTitle>Modules Configuration</ng-template>
+        <ng-template clrPageNavTitle>Modules Configuration</ng-template>
+    </clr-wizard-page>
+
+    <clr-wizard-page>
+        <ng-template clrPageTitle>Custom Tasks</ng-template>
+        <ng-template clrPageNavTitle>Custom Tasks</ng-template>
+    </clr-wizard-page>
+
+    <clr-wizard-page>
+        <ng-template clrPageTitle>Customize the work breakdown structure</ng-template>
+        <ng-template clrPageNavTitle>Custom WBS</ng-template>
+    </clr-wizard-page>
+    
+    <clr-wizard-page>
+        <ng-template clrPageTitle>Scaling Questionnaire</ng-template>
+        <ng-template clrPageNavTitle>Scaling Questionnaire</ng-template>
+    </clr-wizard-page>
+
+    <clr-wizard-page>
+        <ng-template clrPageTitle>Autoscale Timeline</ng-template>
+        <ng-template clrPageNavTitle>Autoscale Timeline</ng-template>
+    </clr-wizard-page>
+
+    <clr-wizard-page>
+        <ng-template clrPageTitle>Summaries</ng-template>
+        <ng-template clrPageNavTitle>Summaries</ng-template>
+    </clr-wizard-page>
+</clr-wizard>

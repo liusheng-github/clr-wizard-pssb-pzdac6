@@ -1,0 +1,97 @@
+:host {
+  display: flex;
+  position: relative;
+}
+
+::ng-deep {
+  .clr-vertical-nav:not(.is-collapsed) {
+    width: 13.5rem;
+    min-width: 2rem;
+  }
+
+  .main-container:not([class*=open-overflow-menu]):not([class*=open-hamburger-menu]) .clr-vertical-nav.is-collapsed .nav-icon {
+    margin-left: .5rem;
+  }
+
+
+
+  .clr-vertical-nav .nav-group-content .nav-icon {
+    margin-left: .5rem;
+  }
+  .clr-vertical-nav.has-icons .nav-group-children .nav-link {
+    padding-left: 1.4rem;
+  }
+  .clr-vertical-nav .nav-group-children .nav-group-children .nav-group-trigger {
+    position: relative;
+  }
+  .clr-vertical-nav .nav-group-children .nav-group-children .nav-group-content .nav-icon {
+      margin-left: 1.6rem;
+  }
+  .clr-vertical-nav.has-icons .nav-group-children .nav-group-children .nav-group-children .nav-link {
+    padding-left: 3rem;
+  }
+  .clr-vertical-nav.has-icons .nav-group-children .nav-group-children .nav-group-children .nav-link:before {
+    width: 5px;
+  }
+  .clr-vertical-nav.has-icons .nav-group-children .nav-group-children .nav-link {
+    // padding-left: 2.5rem;
+    padding-left: .5rem;
+    margin-left: 2rem;
+    position: relative;
+  }
+  .clr-vertical-nav.has-icons .nav-group-children .nav-group-children .nav-group-trigger:before,
+  .clr-vertical-nav.has-icons .nav-group-children .nav-group-children .nav-link:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 2px;
+    bottom: 0px;
+    background: #ddd;
+  }
+  .clr-vertical-nav.has-icons .nav-group-children .nav-group-children .nav-link:hover:before {
+    background: #007cbb;
+  }
+  .clr-vertical-nav .nav-group-children .nav-group-children .nav-group-content.active .nav-group-trigger:before, 
+  .clr-vertical-nav .nav-group-children .nav-group-children .nav-group-content:hover .nav-group-trigger:before {
+    background: #007cbb;
+  }
+
+
+  .clr-vertical-nav .nav-group-text, .clr-vertical-nav .nav-link {
+    padding: 0 .5rem 0 .5rem;
+  }
+
+  .clr-vertical-nav .nav-group-children .nav-group-trigger .nav-icon {
+  visibility: hidden;
+  }
+
+  .clr-vertical-nav.has-nav-groups .nav-group-children .nav-group .nav-group-text, 
+  .clr-vertical-nav.has-nav-groups .nav-group-children .nav-group .nav-group-trigger, 
+  .clr-vertical-nav.has-nav-groups .nav-group-children .nav-link {
+    font-weight: normal;
+  }
+
+  .clr-vertical-nav clr-vertical-nav-group-children clr-vertical-nav-group-children {
+    margin-left: 2rem;
+  }
+  .clr-vertical-nav clr-vertical-nav-group-children clr-vertical-nav-group-children clr-vertical-nav-group-children {
+    margin-left: 0;
+  }
+  .clr-vertical-nav.has-icons .nav-group-children .nav-group-children .nav-group-children .nav-link {
+    padding-left: 1rem;
+  }
+
+  .clr-vertical-nav .nav-group-children .nav-group-children .nav-group-content .nav-icon {
+    margin-left: 0;
+    display: none;
+  }
+  .clr-vertical-nav .nav-group-children .nav-group-children .nav-group-content .nav-group-text {
+    padding-left: .5rem;
+  }
+  .clr-vertical-nav.has-icons .nav-group-children .nav-group-children .nav-link {
+    padding-left: .5rem;
+    margin-left: 0;
+    position: relative;
+  }
+}

@@ -1,0 +1,16 @@
+.btn:first-child {
+  margin-top: 0;
+}
+.btn:not(:first-child) {
+  margin-bottom: 0;
+}
+
+.customer-name {
+  display: inline-block;
+  box-shadow: #eee 0 -0.16667rem 0px inset;
+  padding-bottom: .4rem;
+}
+
+button.btn.btn-link.clr-wizard-stepnav-link::before {
+  display: none;
+}

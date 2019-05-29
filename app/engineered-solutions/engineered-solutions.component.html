@@ -1,0 +1,36 @@
+<clr-vertical-nav [clrVerticalNavCollapsible]="true" [(clrVerticalNavCollapsed)]="collapsed">
+  <div class="vertical-nav-top solution-set-btns">
+    <h5 class="nav-header">Engineered Solutions</h5>
+    <div class="eng-solutions-tags" [hidden]="selected == 0">
+      <clr-checkbox 
+        *ngFor="let item of engSolutions"
+        [(clrChecked)]="item.running"
+        [name]="item.name"
+        [ngClass]="{'checked': item.running}">
+        <!-- <clr-icon shape="info-standard"></clr-icon> -->
+        <clr-tooltip>
+          <clr-icon 
+            clrTooltipTrigger 
+            shape="info-circle" 
+            size="24"></clr-icon>
+          <clr-tooltip-content clrPosition="{{tagsLeft ? 'right' : 'left'}}" clrSize="sm" *clrIfOpen>
+              <span>Lorem ipsum sit</span>
+          </clr-tooltip-content>
+        </clr-tooltip>
+        {{ item.value }}
+      </clr-checkbox>
+    </div>
+  </div>
+  <div class="vertical-nav-bottom">
+    <label class="nav-header">
+      <clr-icon shape="help-info"></clr-icon>
+      Note
+    </label>
+    <div class="info-note">
+      <span [hidden]="selected == 0">Selecting Engineered Solutions relevant to your opportunity is optional.</span>
+      <span [hidden]="selected > 0">
+        You are not seeing any Engineered Solutions, because you have not selected any Solution Sets tied to services built with Engineered Solutions.
+      </span>
+    </div>
+  </div>
+</clr-vertical-nav>

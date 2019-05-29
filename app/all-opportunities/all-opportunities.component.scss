@@ -1,0 +1,33 @@
+:host {
+  flex: 1 1 auto;
+  display: flex;
+}
+
+
+
+
+::ng-deep {
+
+  .content-area {
+    display: flex;
+    flex-direction: column;
+  }
+  .datagrid-area {
+    flex: 1 1 auto;
+    position: relative;
+  }
+  app-clr-datagrid-selection-demo {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  .datagrid-host {
+    flex: 1 1 auto;
+  }
+  .btn-group {
+    margin-left: 0;
+  }
+
+}

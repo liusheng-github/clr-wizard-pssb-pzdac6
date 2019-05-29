@@ -1,0 +1,41 @@
+// here are just the columns / fractions
+// defining parts of the styles
+// specific for itvm
+// the rest more generic part is in
+// styles/solution-set-grid.scss
+///////////////////////////////////////////
+
+.grid-cybersecurity {
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  margin-top: 1em;
+
+  h5 {
+    grid-column: 1/4;
+  }
+}
+
+.grid.itvm {
+  grid-template-columns: 1fr 1fr 1fr;
+
+  // sub-grid
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    border: 0;
+    padding: 0;
+    position: relative;
+  }
+}
+
+form {
+  margin: 0 auto;
+}
+::ng-deep {
+  @media all and (min-width: 1400px) {
+    form {
+      max-width: 1320px;
+    }
+  }
+}

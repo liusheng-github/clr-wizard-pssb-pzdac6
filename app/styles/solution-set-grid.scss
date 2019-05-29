@@ -1,0 +1,154 @@
+::ng-deep {
+
+  ////////////////////////////////////////////
+
+  :root {
+    --grid-column-gap: 1.5rem;
+    --column-delimiter-color: #d9e4ea;
+
+    --grid-row-gap: .5rem;
+    --grid-border-color: #d7d7d7;
+    --grid-padding: 1rem;
+
+    --grid-blocks-background-color: white;
+    --grid-blocks-bottom-border-height: .11rem;
+    --grid-blocks-border-radius: .2rem;
+    
+    --box-border-color: #ccc;
+    --box-background-hover: #333;
+    --box-font-color-hover: #fff;
+    --border-color: #d9e4eb;
+  }
+
+  ////////////////////////////////////////////
+
+  .grid {
+    display: grid;
+    justify-content: space-evenly;
+    grid-column-gap: var(--grid-column-gap);
+    grid-row-gap: var(--grid-row-gap);
+    border: 1px solid var(--grid-border-color);
+    border-bottom: var(--grid-blocks-bottom-border-height) solid var(--grid-border-color); 
+    padding: var(--grid-padding);
+    background: var(--grid-blocks-background-color);
+    border-radius: var(--grid-blocks-border-radius);
+
+    background: rgba(254,254,254,1);
+    background: -moz-linear-gradient(top, rgba(254,254,254,1) 0%, rgba(254,254,254,1) 63%, rgba(250,250,250,1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(254,254,254,1)), color-stop(63%, rgba(254,254,254,1)), color-stop(100%, rgba(250,250,250,1)));
+    background: -webkit-linear-gradient(top, rgba(254,254,254,1) 0%, rgba(254,254,254,1) 63%, rgba(250,250,250,1) 100%);
+    background: -o-linear-gradient(top, rgba(254,254,254,1) 0%, rgba(254,254,254,1) 63%, rgba(250,250,250,1) 100%);
+    background: -ms-linear-gradient(top, rgba(254,254,254,1) 0%, rgba(254,254,254,1) 63%, rgba(250,250,250,1) 100%);
+    background: linear-gradient(to bottom, rgba(254,254,254,1) 0%, rgba(254,254,254,1) 63%, rgba(250,250,250,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fefefe', endColorstr='#fafafa', GradientType=0 );
+
+    h5 {
+      margin: 0;
+      align-self: start;
+      text-align: center;
+    }
+
+    // column-delimiter
+    ////////////////////////////////////
+    &.column-delimiter {
+      .column-delimitted:not(:last-child):after {
+        content: "";
+        position: absolute;
+        background: var(--column-delimiter-color);
+        right: calc( ( var(--grid-column-gap) / 2 ) * -1 );
+        bottom: 0;
+        width: 1px;
+        height: calc(100% - 2.5rem);
+      }
+    }
+  }
+
+  // make clr-checkbox 
+  // look like a button
+  ////////////////////////////////////
+  .solution-set-btns {
+    clr-checkbox {
+      display: flex !important;
+      position: relative;
+      min-height: 2rem;
+      align-items: stretch;
+      &.checked {
+        background-color: #f0f0f0; //#efefef;
+        color: var(--font-color);
+      }
+      &:not(.checked):hover {
+        label {
+          top: -2px;
+          box-shadow: 0px 2px 0px 0px darken(#ddd, 5%);
+          transition: all 0.1s;
+          background: #fafafa;
+        }
+        &:active {
+          label {
+            top: 0px;
+            box-shadow: 0 0 0 0 darken(#ddd, 2%),
+                        inset .03rem .03rem 0 0 darken(#ddd, 2%);
+            transition: all 0.05s;
+          }
+        }
+      }
+      label {
+        font-family: 'Metropolis-Thin', inherit;
+        border: 1px solid var(--box-border-color);
+        border-radius: .2rem;
+        line-height: .75rem;
+        flex: 1 1 auto;
+        text-align: center;
+        cursor: pointer;
+        display: flex !important;
+        justify-content: center;
+        align-items: center;
+        padding: .3em !important;
+        top: 0;
+        box-shadow: 0 0 0 0 darken(#ddd, 5%);
+        user-select: none;
+      }
+    }
+    .checkbox-inline input[type=checkbox] + label:before, 
+    .checkbox input[type=checkbox] + label:before {
+      content: "";
+      height: .66667rem;
+      width: .66667rem;
+      border: 1px solid #9a9a9a;
+      border-radius: .125rem;
+      position: relative;
+      display: none !important;
+    }
+    .checkbox-inline input[type=checkbox] + label:after, 
+    .checkbox input[type=checkbox] + label:after {
+      position: absolute;
+      content: "";
+      display: none;
+      height: 0.3rem;
+      width: .33333rem;
+      border-left: .08333rem solid #fff;
+      border-bottom: .08333rem solid #fff;
+      top: .16667rem;
+      transform: translateY(.16667rem) rotate(-45deg);
+      border-color: #fff;
+      left: .31rem;
+    }
+    .checkbox-inline input[type=checkbox]:checked+label:after, 
+    .checkbox input[type=checkbox]:checked+label:after {
+      display: none !important;
+    }
+
+    .checked {
+      label {
+        box-shadow: 0 0 0 0 darken(#ddd, 2%),
+                    inset .03rem .03rem 0 0 darken(#ddd, 2%);
+      }
+    }
+
+  }
+  .grid {
+    clr-checkbox {
+      height: 100%;
+    }
+  }
+}

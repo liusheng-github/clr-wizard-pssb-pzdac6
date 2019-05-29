@@ -1,0 +1,40 @@
+<form class="scrollable-sections grid-two-cols">
+
+  <section>
+    <h3>Relevant Products</h3>
+    <h3>Solution Element Summary</h3>
+  </section>
+
+  <section>
+    <h5>
+      <div class="title">Configured</div>
+      <div class="selected">
+        <span>{{ relevantProducts.length }}</span> / {{ relevantProducts.length }}
+      </div>
+    </h5>
+    <h5>
+      <div class="title">Configured</div>
+      <div class="selected">
+        <span>{{ relevantProducts.length }}</span> / {{ relevantProducts.length }}
+      </div>
+    </h5>
+  </section>
+
+  <section>
+    <div>
+      <clr-checkbox *ngFor="let item of relevantProducts"
+          [(clrChecked)]="item.running"
+          [clrDisabled]="item.disabled">
+          {{ item.name }}
+      </clr-checkbox>
+    </div>
+    <div>
+      <clr-checkbox *ngFor="let item of relevantProducts"
+          [(clrChecked)]="item.running"
+          [clrDisabled]="item.disabled">
+          {{ item.name }}
+      </clr-checkbox>
+    </div>
+  </section>
+
+</form>

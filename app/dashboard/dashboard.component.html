@@ -1,0 +1,24 @@
+<app-admin-sidenav></app-admin-sidenav>
+
+<div class="content-container">
+  <div class="content-area">
+
+      <h1>Dashboard</h1>
+
+      <div class="buttons">
+        <app-dashboard-buttons
+          [tagsLeft]="tagsLeft"></app-dashboard-buttons>
+      </div>
+
+      <div class="datagrid-area">
+        <app-clr-datagrid-selection-demo 
+          datagridTitle="Opportunities - Recently Viewed"></app-clr-datagrid-selection-demo>
+      </div>
+
+      <div class="datagrid-area">
+        <app-clr-datagrid-selection-demo
+          datagridTitle="Opportunities - Recently Created"></app-clr-datagrid-selection-demo>
+      </div>
+
+  </div>
+</div>

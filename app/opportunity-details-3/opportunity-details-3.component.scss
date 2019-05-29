@@ -1,0 +1,27 @@
+::ng-deep {
+  clr-tabs.vertical-tabs {
+    display: flex;
+
+    .nav {
+      flex-direction: column;
+      height: auto;
+      align-items: start;
+      box-shadow: none;
+      width: auto;
+      margin-right: 1rem;
+
+      .nav-link {
+        text-align: left;
+        padding: 0 .5rem;
+        border-radius: 0 .125rem .125rem 0;
+        margin-bottom: 1px;
+
+        &.active, 
+        &:hover {
+          box-shadow: inset 3px 0 0 #007cbb;
+          background-color: #eee;
+        }
+      }
+    }
+  }
+}

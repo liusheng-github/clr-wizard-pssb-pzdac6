@@ -1,0 +1,52 @@
+<div class="alert alert-info">
+    <div class="alert-items">
+        <div class="alert-item static">
+            <div class="alert-icon-wrapper">
+                <clr-icon class="alert-icon" shape="info-circle"></clr-icon>
+            </div>
+            <span class="alert-text">
+              Directly download the Bill of Materials.
+            </span>
+            <div class="alert-actions">
+                <a href="javascript:void(0);" class="alert-action">Acknowledge</a>
+
+                <clr-dropdown>
+                  <a href="javascript:void(0);" class="alert-action" clrDropdownTrigger>
+                    Download BOM
+                    <clr-icon shape="caret down"></clr-icon>
+                  </a>
+                  <clr-dropdown-menu clrPosition="bottom-right" *clrIfOpen>
+                      <button type="button" clrDropdownItem>Download Proposal (.PPTX)</button>
+                      <button type="button" clrDropdownItem>Download SSaD (.DOCX)</button>
+                      <button type="button" clrDropdownItem>Download BOM (.ZIP)</button>
+                  </clr-dropdown-menu>
+              </clr-dropdown>
+            </div>
+        </div>
+    </div>
+    <button type="button" class="close" aria-label="Close">
+        <clr-icon aria-hidden="true" shape="close"></clr-icon>
+    </button>
+</div>
+<form>
+  <clr-tabs class="vertical-tabs">
+      <clr-tab>
+          <button clrTabLink id="link1">Opportunity Details</button>
+          <clr-tab-content id="content1" *clrIfActive>
+            <app-oppoprtunity-details-fields></app-oppoprtunity-details-fields>
+          </clr-tab-content>
+      </clr-tab>
+      <clr-tab>
+          <button clrTabLink>Delivery Region</button>
+          <clr-tab-content *clrIfActive="true">
+            <app-delivery-region-fields></app-delivery-region-fields>
+          </clr-tab-content>
+      </clr-tab>
+      <clr-tab>
+          <button clrTabLink>Selected Solution Elements</button>
+          <clr-tab-content *clrIfActive="true">
+            Selected Solution Elements
+          </clr-tab-content>
+      </clr-tab>
+  </clr-tabs>
+</form>

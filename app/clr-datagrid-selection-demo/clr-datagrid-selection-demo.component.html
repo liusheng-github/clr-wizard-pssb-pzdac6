@@ -1,0 +1,57 @@
+<h3>{{ datagridTitle }}</h3>
+<clr-datagrid [(clrDgSelected)]="clientNoTrackBySelected">
+    <clr-dg-action-bar>
+        <div class="btn-group">
+            <button type="button" 
+              [disabled]="clientNoTrackBySelected.length == 0 || clientNoTrackBySelected.length > 1"
+              class="btn btn-sm btn-secondary">
+                <clr-icon shape="pencil"></clr-icon> 
+                Edit
+            </button>
+            <button type="button" 
+              [disabled]="clientNoTrackBySelected.length == 0 || clientNoTrackBySelected.length > 1"
+              class="btn btn-sm btn-secondary">
+              <clr-icon shape="export"></clr-icon> 
+              Assign to...
+            </button>
+            <button type="button" 
+              [disabled]="clientNoTrackBySelected.length == 0 || clientNoTrackBySelected.length > 1"
+              class="btn btn-sm btn-secondary">
+              <clr-icon shape="download-cloud"></clr-icon> 
+              Download
+            </button>
+            <button type="button" 
+              [disabled]="clientNoTrackBySelected.length == 0 || clientNoTrackBySelected.length > 1"
+              class="btn btn-sm btn-secondary">
+              <clr-icon shape="close"></clr-icon> 
+              Mark as closed
+            </button>
+            <button type="button" 
+              [disabled]="clientNoTrackBySelected.length == 0"
+              class="btn btn-sm btn-secondary">
+              <clr-icon shape="trash"></clr-icon> 
+              Delete
+            </button>
+        </div>
+    </clr-dg-action-bar>
+
+    <clr-dg-column>Opportunity Name</clr-dg-column>
+    <clr-dg-column>Customer Name</clr-dg-column>
+    <clr-dg-column>Status</clr-dg-column>
+    <clr-dg-column>Assigned to</clr-dg-column>
+    <clr-dg-column>Created Date</clr-dg-column>
+    <clr-dg-column>Created By</clr-dg-column>
+
+    <clr-dg-row *clrDgItems="let user of users" [clrDgItem]="user">
+        <clr-dg-cell>{{user.opportunity}}</clr-dg-cell>
+        <clr-dg-cell>{{user.customer}}</clr-dg-cell>
+        <clr-dg-cell>{{user.status}}</clr-dg-cell>
+        <clr-dg-cell>{{user.assignedTo}}</clr-dg-cell>
+        <clr-dg-cell>{{user.creation | date}}</clr-dg-cell>
+        <clr-dg-cell>{{user.createdBy}}</clr-dg-cell>
+    </clr-dg-row>
+
+    <clr-dg-footer>
+      <a href="#">View all opportunities</a>
+    </clr-dg-footer>
+</clr-datagrid>
