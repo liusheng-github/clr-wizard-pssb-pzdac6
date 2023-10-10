@@ -11,7 +11,7 @@
     "@clr/icons": "0.11.13",
     "clarity-ui": "0.10.27",
     "@clr/angular": "0.11.13",
-    "@angular/core": "4.3.4",
+    "@angular/core": "10.2.5",
     "@angular/http": "4.3.4",
     "clarity-icons": "0.10.27",
     "@angular/forms": "4.3.4",
